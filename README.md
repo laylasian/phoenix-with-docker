@@ -208,7 +208,11 @@ Now that we have this file in place, we can begin setting things in motion.
 
 ```shell
 docker-compose up -d
+(add --build before -d if changes to yml or Dockerfile)
+
 docker-compose run web mix phoenix.new hello_world
+(instead docker-compose run web bash, then the rest of these steps)
+
 mv hello_world/* ./
 mv hello_world/.gitignore ./
 rm -rf hello_world
@@ -221,6 +225,6 @@ docker-compose restart web
 
 If all goes well, go to localhost:4000.
 
-With this setup, you can get up and running on any machine running docker and know your environment is exactly the same. In development, qa, and production - you can keep everything in lock step. For production, you'll want to consult with your devops team to ensure the configuration is in line with what they want. Consider this a starting point. 
+With this setup, you can get up and running on any machine running docker and know your environment is exactly the same. In development, qa, and production - you can keep everything in lock step. For production, you'll want to consult with your devops team to ensure the configuration is in line with what they want. Consider this a starting point.
 
 > Want to get started without typing all this out? Fork my project [here](https://github.com/rbeene/phoenix-with-docker) and give it a whirl. Just make sure you have Docker installed!
